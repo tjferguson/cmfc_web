@@ -41,6 +41,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
+}
+
+.MessageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  justify-content: space-between;
 }
 
 .rightUser {
