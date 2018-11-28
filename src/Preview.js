@@ -5,6 +5,7 @@ import warning from "./warning.svg";
 
 const Preview = ({
   id,
+  sponsor,
   sponsored,
   sponsorPicture,
   sponsoredPicture,
@@ -26,7 +27,7 @@ const Preview = ({
         previewClick(id);
       }}
     >
-      <Picture photo={sponsorPicture} />
+      <Picture photo={sponsorPicture} phone={sponsor}/>
       <div
         className={`MessageContainer ${showConversation ? "Conversation" : ""}`}
       >
@@ -54,7 +55,7 @@ const Preview = ({
           className={`Warning ${showConversation ? " WarningHidden" : ""}`}
         />
       )}
-      <Picture photo={sponsoredPicture} />
+      <Picture photo={sponsoredPicture} phone={sponsored}/>
     </div>
   );
 };

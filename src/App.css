@@ -16,7 +16,7 @@
 
 .Picture {
   max-width: 50px;
-  margin: 10px;
+  margin-top: 10px;
 }
 
 .Header {
@@ -90,4 +90,11 @@
 .WarningAction {
   padding: 5px;
   height: 50px;
+}
+
+.Phone {
+  font-size: 10pt;
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.6);
+  margin-bottom: 10px;
 }
