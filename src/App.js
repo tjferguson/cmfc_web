@@ -18,6 +18,63 @@ const chatHistory = [
         from: "A",
         timestamp: "100",
         message: "How is it going?"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "How is it going?"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "How is it going?"
+      }
+    ]
+  },
+  {
+    id: 4,
+    sponsor: "A",
+    sponsored: "B",
+    messages: [
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "How is it going?"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "How is it going?"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      },
+      {
+        from: "A",
+        timestamp: "100",
+        message: "How is it going?"
       }
     ]
   },
@@ -26,6 +83,21 @@ const chatHistory = [
     sponsor: "C",
     sponsored: "D",
     messages: [
+      {
+        from: "D",
+        timestamp: "150",
+        message: "Good bye"
+      },
+      {
+        from: "D",
+        timestamp: "150",
+        message: "Good bye"
+      },
+      {
+        from: "D",
+        timestamp: "150",
+        message: "Good bye"
+      },
       {
         from: "D",
         timestamp: "150",

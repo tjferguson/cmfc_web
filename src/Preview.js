@@ -12,16 +12,23 @@ const Preview = ({
   conversationShown
 }) => {
   const lastMessage = messages[messages.length - 1];
+  const showConversation = conversationShown === id;
   return (
     <div
-      className="Preview"
+      className={`Preview ${
+        conversationShown !== -1 && !showConversation
+          ? "BackgroundConversation"
+          : ""
+      }`}
       onClick={() => {
         previewClick(id);
       }}
     >
       <Picture photo={sponsorPicture} />
-      <div className="MessageContainer">
-        {conversationShown === id ? (
+      <div
+        className={`MessageContainer ${showConversation ? "Conversation" : ""}`}
+      >
+        {showConversation ? (
           messages.map((message, index) => {
             return (
               <Message

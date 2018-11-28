@@ -11,6 +11,7 @@
   align-items: center;
   width: 50vw;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 .Picture {
@@ -49,7 +50,18 @@
   flex-direction: column;
   align-items: center;
   width: 50vw;
-  justify-content: space-between;
+  justify-content: flex-end;
+  transition: 0.75s;
+  height: 30px;
+}
+
+.Conversation {
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.BackgroundConversation {
+  opacity: 0.5;
 }
 
 .rightUser {
