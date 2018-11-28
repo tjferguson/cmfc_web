@@ -2,6 +2,7 @@ import React from "react";
 import warning from "./warning.svg";
 
 const Message = ({ right, message }) => {
+  const showDialog = () => {console.log("Show dialog")};
   return (
     <div
       className={`Message ${right ? "rightUser" : "leftUser"} ${
@@ -10,12 +11,18 @@ const Message = ({ right, message }) => {
     >
       {message.message}
       {message.moderationNeeded && (
-        <img
-          src={warning}
-          alt="moderation needed"
-          className={'Warning'} 
-        />
+        <div>
+          <img
+            src={warning}
+            alt="moderation needed"
+            className="WarningAction"
+            onClick={showDialog}
+          />
+        </div>
       )}
+      {
+
+      }
     </div>
   );
 };
