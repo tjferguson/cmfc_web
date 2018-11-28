@@ -1,25 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Preview from "./Preview";
+import Header from './Header'
+
+const chatHistory = [
+  {
+    id: 1,
+    sponsor: "A",
+    sponsored: "B",
+    messages: [
+      {
+        from: "A",
+        timestamp: "100",
+        message: "Hello"
+      }
+    ]
+  },
+  {
+    id: 2,
+    sponsor: "C",
+    sponsored: "D",
+    messages: [
+      {
+        from: "D",
+        timestamp: "150",
+        message: "Good bye"
+      }
+    ]
+  }
+];
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Header />
+        {chatHistory.map(chatItem => {
+          return <Preview key={chatItem.id} {...chatItem} />;
+        })}
       </div>
     );
   }
