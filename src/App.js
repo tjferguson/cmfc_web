@@ -2,14 +2,26 @@ import React, { Component } from "react";
 import "./App.css";
 import Preview from "./Preview";
 import Header from "./Header";
-import chatHistory from "./chatHistory.json";
+import { queryTable } from "./database";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      conversationShown: -1
+      conversationShown: -1,
+      chatHistory: []
     };
+  }
+
+  updateData = data => {
+    this.setState({ chatHistory: data });
+  };
+
+  async componentDidMount() {
+    const chatHistory = await queryTable(this.updateData);
+    this.setState({
+      chatHistory
+    });
   }
 
   showConversation = id => {
@@ -22,17 +34,18 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {chatHistory.map(chatItem => {
-          return (
-            <Preview
-              key={chatItem.id}
-              {...chatItem}
-              previewClick={this.showConversation}
-              showingConversation
-              conversationShown={this.state.conversationShown}
-            />
-          );
-        })}
+        {this.state.chatHistory &&
+          this.state.chatHistory.map(chatItem => {
+            return (
+              <Preview
+                key={chatItem.id}
+                {...chatItem}
+                previewClick={this.showConversation}
+                showingConversation
+                conversationShown={this.state.conversationShown}
+              />
+            );
+          })}
       </div>
     );
   }
