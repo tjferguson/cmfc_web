@@ -1,6 +1,7 @@
 import React from "react";
 import Picture from "./Picture";
 import Message from "./Message";
+import warning from "./warning.svg";
 
 const Preview = ({
   id,
@@ -13,6 +14,7 @@ const Preview = ({
 }) => {
   const lastMessage = messages[messages.length - 1];
   const showConversation = conversationShown === id;
+  const moderationNeeded = messages.some(message => message.moderationNeeded);
   return (
     <div
       className={`Preview ${
@@ -45,6 +47,13 @@ const Preview = ({
           />
         )}
       </div>
+      {moderationNeeded && (
+        <img
+          src={warning}
+          alt="moderation needed"
+          className={`Warning ${showConversation ? " WarningHidden" : ""}`}
+        />
+      )}
       <Picture photo={sponsoredPicture} />
     </div>
   );

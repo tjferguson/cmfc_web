@@ -22,7 +22,8 @@
       {
         "from": "A",
         "timestamp": "100",
-        "message": "How is it going?"
+        "message": "How is it going?",
+        "moderationNeeded": true
       },
       {
         "from": "A",
